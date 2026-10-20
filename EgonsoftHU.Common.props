@@ -6,7 +6,7 @@ This code is licensed under MIT license (see LICENSE for details)
 
   <!-- Support for dotnet CLI commands -->
   <PropertyGroup>
-    <SolutionDir>$(MSBuildThisFileDirectory)..\..\</SolutionDir>
+    <SolutionDir>$(MSBuildThisFileDirectory)..\</SolutionDir>
   </PropertyGroup>
 
   <!-- Support for dotnet CLI commands (dotnet_style_namespace_match_folder) -->
