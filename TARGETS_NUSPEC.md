@@ -31,10 +31,10 @@ The content of the `Directory.Build.targets` file may look like this:
 <Project>
 
   <PropertyGroup>
-    <EgonsoftHUNuspecPropertiesTargetsFile>$(MSBuildThisFileDirectory)Build\EgonsoftHU.NuGet.NuSpecProperties.targets</EgonsoftHUNuspecPropertiesTargetsFile>
+    <NuSpecPropertiesTargetsFile>$(MSBuildThisFileDirectory)Build\EgonsoftHU.NuGet.NuSpecProperties.targets</NuSpecPropertiesTargetsFile>
   </PropertyGroup>
 
-  <Import Project="$(EgonsoftHUNuspecPropertiesTargetsFile)" Condition="Exists('$(EgonsoftHUNuspecPropertiesTargetsFile)')" />
+  <Import Project="$(NuSpecPropertiesTargetsFile)" Condition="Exists('$(NuSpecPropertiesTargetsFile)')" />
 
 </Project>
 ```

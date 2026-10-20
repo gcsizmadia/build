@@ -1,8 +1,8 @@
-<!--
-Copyright © 2022 Gabor Csizmadia
+﻿<!--
+Copyright © 2022-2026 Gabor Csizmadia
 This code is licensed under MIT license (see LICENSE for details)
 -->
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+<Project>
 
   <UsingTask
     TaskName="EgonsoftHU_UpdateNuspecFile"
