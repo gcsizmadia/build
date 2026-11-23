@@ -4,9 +4,20 @@ This code is licensed under MIT license (see LICENSE for details)
 -->
 <Project>
 
-  <PropertyGroup Condition="'$(IsPackable)' != 'true'">
-    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
-  </PropertyGroup>
+  <!-- Workaround for https://github.com/dotnet/roslyn/issues/41640 -->
+  <!-- Author: Sven Hübner                                          -->
+  <!-- Source: https://github.com/shuebner/CheckUnnecessaryUsings   -->
+  <!-- ============================================================ -->
+  <Target Name="__TriggerUnnecessaryUsingsCheck" BeforeTargets="CoreCompile">
+    <ItemGroup Condition="'$(GenerateDocumentationFile)' != 'true'">
+      <DocFileItem Include="$(IntermediateOutputPath)DummyDocForUnnecessaryUsings.xml" />
+    </ItemGroup>
+    <PropertyGroup Condition="'$(GenerateDocumentationFile)' != 'true'">
+      <CopyDocumentationFileToOutputDirectory>false</CopyDocumentationFileToOutputDirectory>
+      <NoWarn>$(NoWarn);CS1570;CS1571;CS1572;CS1573;CS1574;CS1580;CS1581;CS1584;CS1587;CS1589;CS1590;CS1591;CS1592;CS1710;CS1711;CS1712;CS1723;CS1734;CS1735</NoWarn>
+    </PropertyGroup>
+  </Target>
+  <!-- ============================================================ -->
 
   <PropertyGroup Condition="'$(IsPackable)' == 'true'">
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
